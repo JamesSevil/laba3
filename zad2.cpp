@@ -187,6 +187,9 @@ int MillerRabin(int number, int k) { // Миллер-Рабин
 }
 
 int main() {
+    setlocale(LC_ALL, "Rus");
+    srand(time(0));
+    
     int num = 500;
 
     vector<int> Prostie = Eratos(num);
@@ -206,7 +209,7 @@ int main() {
     int MissedOnes = 0;
     int TotalNums = 0;
     while (ReallyProstie.size() < 10) {
-        int test = (rand() * clock()) % (500 - 4) + 2;
+        int test = rand() % (500 - 4) + 2;
 
         if (Miller(Prostie, test) && Poli(Prostie, test)) {
             ReallyProstie.push_back(test);
